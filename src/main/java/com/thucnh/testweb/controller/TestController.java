@@ -11,4 +11,9 @@ public class TestController {
     public String returnString() {
         return "index.html";
     }
+
+    @GetMapping("/test2")
+    public String returnString2() {
+        return "index2.html";
+    }
 }
