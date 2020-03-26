@@ -49,6 +49,19 @@ class TestwebApplicationTests {
         assertEquals("thucnhthucnh", s);
     }
 
+    @Test
+    public void testEvaluate() {
+        driver.get("http://localhost:8080/test2");
+        driver.findElement(By.id("txtNumber1")).clear();
+        driver.findElement(By.id("txtNumber2")).clear();
+        driver.findElement(By.id("txtNumber1")).sendKeys("1");
+        driver.findElement(By.id("txtNumber2")).sendKeys("2");
+        driver.findElement(By.id("btnEvaluate")).click();
+        WebElement elementName = driver.findElement(By.id("txtResult"));
+        String result = elementName.getText();
+        assertEquals("3", result);
+    }
+
     private boolean checkElement(WebDriver driver) {
         if (driver.findElement(By.id("viewport")) != null) {
             return true;
