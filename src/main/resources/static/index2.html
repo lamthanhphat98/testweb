@@ -9,15 +9,13 @@
 <input type="text" id="txtNumber1"/>
 <input type="text" id="txtNumber2"/>
 <input onclick="plus()" id="btnEvaluate" type="button" value="Evaluate"/>
+<p id="txtResult"></p>
 <script>
     function plus() {
         var number1 = document.getElementById("txtNumber1");
         var number2 = document.getElementById("txtNumber2");
-        var p = document.createElement("p");
+        var p = document.getElementById("txtResult");
         p.innerHTML= +number1.value + +number2.value;
-        p.setAttribute("id","txtResult");
-        var body = document.getElementsByTagName("body");
-        body[0].appendChild(p);
     }
 </script>
 </body>
